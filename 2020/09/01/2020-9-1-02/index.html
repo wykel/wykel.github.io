@@ -22,16 +22,20 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"8.0.0-rc.5","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="wyked&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="解决首页中 Better-Scroll 可滚动区域的问题 Better-Scroll 在决定有多少区域可以滚动时，时根据 scrollerHeight 属性决定的  scrollerHeight 属性是根据放 Better-Scroll 的 content 中的子组件的高度 但是我们的首页中，刚开始在计算 scrollerHeight 属性时，是没有将图片计算在内的 所以，计算出来的高度是错误的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学习笔记——解决滚动问题">
+<meta property="og:url" content="http://yoursite.com/2020/09/01/2020-9-1-02/index.html">
 <meta property="og:site_name" content="wyked&#39;s Blog">
+<meta property="og:description" content="解决首页中 Better-Scroll 可滚动区域的问题 Better-Scroll 在决定有多少区域可以滚动时，时根据 scrollerHeight 属性决定的  scrollerHeight 属性是根据放 Better-Scroll 的 content 中的子组件的高度 但是我们的首页中，刚开始在计算 scrollerHeight 属性时，是没有将图片计算在内的 所以，计算出来的高度是错误的">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-09-01T13:55:45.836Z">
+<meta property="article:modified_time" content="2020-09-01T13:57:14.731Z">
 <meta property="article:author" content="wyked">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://yoursite.com/archives/">
+<link rel="canonical" href="http://yoursite.com/2020/09/01/2020-9-1-02/">
 
 
 <script class="page-configurations">
@@ -39,12 +43,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>归档 | wyked's Blog</title>
+  <title>学习笔记——解决滚动问题 | wyked's Blog</title>
   
 
 
@@ -150,7 +154,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -162,6 +166,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E9%A6%96%E9%A1%B5%E4%B8%AD-Better-Scroll-%E5%8F%AF%E6%BB%9A%E5%8A%A8%E5%8C%BA%E5%9F%9F%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text">解决首页中 Better-Scroll 可滚动区域的问题</span></a></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -205,112 +210,132 @@
 </noscript>
 
 
-    <div class="main-inner archive posts-collapse">
+    <div class="main-inner post posts-expand">
       
 
       
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共计 4 篇日志。 继续努力。</span>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/01/2020-9-1-02/">
 
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/author.jpg">
+      <meta itemprop="name" content="wyked">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wyked's Blog">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          学习笔记——解决滚动问题
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
       
-    <div class="collection-year">
-      <span class="collection-header">2020</span>
+
+      <time title="创建时间：2020-09-01 21:55 / 修改时间：21:57" itemprop="dateCreated datePublished" datetime="2020-09-01T21:55:45+08:00">2020-09-01</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h3 id="解决首页中-Better-Scroll-可滚动区域的问题"><a href="#解决首页中-Better-Scroll-可滚动区域的问题" class="headerlink" title="解决首页中 Better-Scroll 可滚动区域的问题"></a>解决首页中 Better-Scroll 可滚动区域的问题</h3><ul>
+<li><p>Better-Scroll 在决定有多少区域可以滚动时，时根据 scrollerHeight 属性决定的</p>
+<ul>
+<li>scrollerHeight 属性是根据放 Better-Scroll 的 content 中的子组件的高度</li>
+<li>但是我们的首页中，刚开始在计算 scrollerHeight 属性时，是没有将图片计算在内的</li>
+<li>所以，计算出来的高度是错误的</li>
+<li>后来图片加载进来后有了新高度，但是 scrollerHeight 属性并没有进行更新，</li>
+<li>所以滚动出现了问题</li>
+</ul>
+</li>
+<li><p>如何解决这个问题</p>
+<ul>
+<li>监听每一张图片是否加载完成，只要有一张图片加载完成了，执行一次refersh()</li>
+<li>如何监听图片加载完成了？<ul>
+<li>原生的JS监听图片：img.onload = function(){}</li>
+<li>Vue中监听：@load=’方法’</li>
+</ul>
+</li>
+<li>调用scroll的refresh()</li>
+</ul>
+</li>
+<li><p>如何将 GoodsListItem.vue 中的事件传入到Home.vue中</p>
+<ul>
+<li><p>因为涉及到非父子组件中的通信，所以这里我们选择了<strong>事件总线</strong></p>
+<ul>
+<li>bus -&gt; 总线</li>
+<li>Vue.prototype.$bus = new Vue()</li>
+<li>this.bus.emit(‘事件名称’,参数)</li>
+<li>this.bus.on(‘事件名称’,回调函数)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2020-09-01T21:55:45+08:00"
-              content="2020-09-01">
-          09-01
-        </time>
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>你的支持将鼓励我继续创作！</div>
+  <button onclick="document.querySelector('.post-reward').classList.toggle('active');">
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.png" alt="wyked 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="/images/alipay.png" alt="wyked 支付宝">
+        <span>支付宝</span>
       </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/09/01/2020-9-1-02/" itemprop="url">
-            <span itemprop="name">学习笔记——解决滚动问题</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2020-09-01T18:21:47+08:00"
-              content="2020-09-01">
-          09-01
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/09/01/2020-9-1-01/" itemprop="url">
-            <span itemprop="name">学习笔记——项目首页开发</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2020-08-31T21:25:35+08:00"
-              content="2020-08-31">
-          08-31
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/08/31/2020-8-31-1/" itemprop="url">
-            <span itemprop="name">学习笔记——摘自《图解HTTP》</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2020-08-17T19:32:55+08:00"
-              content="2020-08-17">
-          08-17
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/08/17/First/" itemprop="url">
-            <span itemprop="name">刚刚开始的blog</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-
-    </div>
   </div>
-  
-  
-  
+</div>
 
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2020/09/01/2020-9-1-01/" rel="prev" title="学习笔记——项目首页开发">
+                  <i class="fa fa-chevron-left"></i> 学习笔记——项目首页开发
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+  
+  
   
 
 

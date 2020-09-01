@@ -177,7 +177,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -209,6 +209,103 @@
       
 
       
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/01/2020-9-1-02/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/author.jpg">
+      <meta itemprop="name" content="wyked">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wyked's Blog">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/09/01/2020-9-1-02/" class="post-title-link" itemprop="url">学习笔记——解决滚动问题</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2020-09-01 21:55 / 修改时间：21:57" itemprop="dateCreated datePublished" datetime="2020-09-01T21:55:45+08:00">2020-09-01</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h3 id="解决首页中-Better-Scroll-可滚动区域的问题"><a href="#解决首页中-Better-Scroll-可滚动区域的问题" class="headerlink" title="解决首页中 Better-Scroll 可滚动区域的问题"></a>解决首页中 Better-Scroll 可滚动区域的问题</h3><ul>
+<li><p>Better-Scroll 在决定有多少区域可以滚动时，时根据 scrollerHeight 属性决定的</p>
+<ul>
+<li>scrollerHeight 属性是根据放 Better-Scroll 的 content 中的子组件的高度</li>
+<li>但是我们的首页中，刚开始在计算 scrollerHeight 属性时，是没有将图片计算在内的</li>
+<li>所以，计算出来的高度是错误的</li>
+<li>后来图片加载进来后有了新高度，但是 scrollerHeight 属性并没有进行更新，</li>
+<li>所以滚动出现了问题</li>
+</ul>
+</li>
+<li><p>如何解决这个问题</p>
+<ul>
+<li>监听每一张图片是否加载完成，只要有一张图片加载完成了，执行一次refersh()</li>
+<li>如何监听图片加载完成了？<ul>
+<li>原生的JS监听图片：img.onload = function(){}</li>
+<li>Vue中监听：@load=’方法’</li>
+</ul>
+</li>
+<li>调用scroll的refresh()</li>
+</ul>
+</li>
+<li><p>如何将 GoodsListItem.vue 中的事件传入到Home.vue中</p>
+<ul>
+<li><p>因为涉及到非父子组件中的通信，所以这里我们选择了<strong>事件总线</strong></p>
+<ul>
+<li>bus -&gt; 总线</li>
+<li>Vue.prototype.$bus = new Vue()</li>
+<li>this.bus.emit(‘事件名称’,参数)</li>
+<li>this.bus.on(‘事件名称’,回调函数)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+  
+  
+  
+
       
   
   
