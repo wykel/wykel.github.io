@@ -22,29 +22,33 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"8.0.0-rc.5","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="wyked&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="一、FeatureView 独立组件封装 FeatureView div &gt; a &gt; img    二、TabControl 独立组件的封装 props -&gt; titles div &gt; 根据titles v-for遍历 div -&gt; span学习笔记——项目首页开发 css相关 选中哪一个tab，哪一个tab文字颜色会变色，下面border-bottom curren">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学习笔记——项目首页开发">
+<meta property="og:url" content="http://yoursite.com/2020/09/01/2020-9-1-01/index.html">
 <meta property="og:site_name" content="wyked&#39;s Blog">
+<meta property="og:description" content="一、FeatureView 独立组件封装 FeatureView div &gt; a &gt; img    二、TabControl 独立组件的封装 props -&gt; titles div &gt; 根据titles v-for遍历 div -&gt; span学习笔记——项目首页开发 css相关 选中哪一个tab，哪一个tab文字颜色会变色，下面border-bottom curren">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-09-01T10:21:47.541Z">
+<meta property="article:modified_time" content="2020-09-01T10:23:25.886Z">
 <meta property="article:author" content="wyked">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://yoursite.com/">
+<link rel="canonical" href="http://yoursite.com/2020/09/01/2020-9-1-01/">
 
 
 <script class="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>wyked's Blog</title>
+  <title>学习笔记——项目首页开发 | wyked's Blog</title>
   
 
 
@@ -150,7 +154,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -162,6 +166,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E3%80%81FeatureView"><span class="nav-number">1.</span> <span class="nav-text">一、FeatureView</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E3%80%81TabControl"><span class="nav-number">2.</span> <span class="nav-text">二、TabControl</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E9%A6%96%E9%A1%B5%E5%95%86%E5%93%81%E6%95%B0%E6%8D%AE%E8%AF%B7%E6%B1%82"><span class="nav-number">3.</span> <span class="nav-text">三、首页商品数据请求</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-%E8%AE%BE%E8%AE%A1%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%8C%E7%94%A8%E4%BA%8E%E4%BF%9D%E5%AD%98%E6%95%B0%E6%8D%AE"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 设计数据结构，用于保存数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-%E5%8F%91%E9%80%81%E6%95%B0%E6%8D%AE%E8%AF%B7%E6%B1%82"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 发送数据请求</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E5%AF%B9%E5%95%86%E5%93%81%E6%95%B0%E6%8D%AE%E8%BF%9B%E8%A1%8C%E5%B1%95%E7%A4%BA"><span class="nav-number">4.</span> <span class="nav-text">四、对商品数据进行展示</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-%E5%B0%81%E8%A3%85GoodsList%E7%BB%84%E4%BB%B6"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 封装GoodsList组件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-%E5%B0%81%E8%A3%85GoodsListItem-vue%E7%BB%84%E4%BB%B6"><span class="nav-number">4.2.</span> <span class="nav-text">4.2 封装GoodsListItem.vue组件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%94%E3%80%81%E5%AF%B9%E6%BB%9A%E5%8A%A8%E8%BF%9B%E8%A1%8C%E9%87%8D%E6%9E%84%EF%BC%9ABetter-Scroll"><span class="nav-number">5.</span> <span class="nav-text">五、对滚动进行重构：Better-Scroll</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%AD%E3%80%81%E5%9B%9E%E5%88%B0%E9%A1%B6%E9%83%A8Back-Top"><span class="nav-number">6.</span> <span class="nav-text">六、回到顶部Back-Top</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#6-1-%E5%AF%B9BackTop-vue%E7%BB%84%E4%BB%B6%E7%9A%84%E5%B0%81%E8%A3%85"><span class="nav-number">6.1.</span> <span class="nav-text">6.1 对BackTop.vue组件的封装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-2-%E5%A6%82%E4%BD%95%E7%9B%91%E5%90%AC%E7%BB%84%E4%BB%B6%E7%9A%84%E7%82%B9%E5%87%BB"><span class="nav-number">6.2.</span> <span class="nav-text">6.2 如何监听组件的点击</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-3-BackTop%E7%BB%84%E4%BB%B6%E7%9A%84%E6%98%BE%E7%A4%BA%E5%92%8C%E9%9A%90%E8%97%8F"><span class="nav-number">7.</span> <span class="nav-text">6.3 BackTop组件的显示和隐藏</span></a></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -205,11 +210,12 @@
 </noscript>
 
 
-    <div class="main-inner index posts-expand">
+    <div class="main-inner post posts-expand">
       
 
       
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -228,10 +234,9 @@
     
     
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/09/01/2020-9-1-01/" class="post-title-link" itemprop="url">学习笔记——项目首页开发</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          学习笔记——项目首页开发
+        </h1>
 
         <div class="post-meta-container">
           <div class="post-meta">
@@ -255,7 +260,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h3 id="一、FeatureView"><a href="#一、FeatureView" class="headerlink" title="一、FeatureView"></a>一、FeatureView</h3><ul>
+        <h3 id="一、FeatureView"><a href="#一、FeatureView" class="headerlink" title="一、FeatureView"></a>一、FeatureView</h3><ul>
 <li>独立组件封装 FeatureView<ul>
 <li>div &gt; a &gt; img</li>
 </ul>
@@ -340,7 +345,6 @@
 </li>
 </ul>
 
-      
     </div>
 
     
@@ -348,153 +352,40 @@
     
 
     <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-  
-  
-  
+          <div class="reward-container">
+  <div>你的支持将鼓励我继续创作！</div>
+  <button onclick="document.querySelector('.post-reward').classList.toggle('active');">
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.png" alt="wyked 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="/images/alipay.png" alt="wyked 支付宝">
+        <span>支付宝</span>
+      </div>
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/31/2020-8-31-1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/author.jpg">
-      <meta itemprop="name" content="wyked">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="wyked's Blog">
-    </span>
-
-    
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/08/31/2020-8-31-1/" class="post-title-link" itemprop="url">学习笔记——摘自《图解HTTP》</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2020-08-31 21:25 / 修改时间：22:48" itemprop="dateCreated datePublished" datetime="2020-08-31T21:25:35+08:00">2020-08-31</time>
-    </span>
-
-  
+  </div>
 </div>
 
-        </div>
-      </header>
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h4 id="一、了解Web及网络基础"><a href="#一、了解Web及网络基础" class="headerlink" title="一、了解Web及网络基础"></a>一、了解Web及网络基础</h4><p>Web 页面不会凭空显示出来。根据Web浏览器地址栏中指定的 URL，Web 浏览器从Web服务器端获取文件资源（resource）等信息，从而显示 Web 页面。</p>
-<p>Web 使用一种名为 HTTP（HyperText Transfer Protocol，超文本传输协议）的协议作为规范。</p>
-<p>HTTP 通常被译为超文本传输协议，但这种译法并不严谨。严谨的译名应该 为“超文本转移协议”。 </p>
-<p>名词：HTTP：HyperText Transfer Protocol （超文本传输协议）</p>
+        
 
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2020/08/31/2020-8-31-1/" rel="prev" title="学习笔记——摘自《图解HTTP》">
+                  <i class="fa fa-chevron-left"></i> 学习笔记——摘自《图解HTTP》
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
     </footer>
   </article>
   
   
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/17/First/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/author.jpg">
-      <meta itemprop="name" content="wyked">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="wyked's Blog">
-    </span>
-
-    
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/08/17/First/" class="post-title-link" itemprop="url">刚刚开始的blog</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2020-08-17 19:32" itemprop="dateCreated datePublished" datetime="2020-08-17T19:32:55+08:00">2020-08-17</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2020-08-21 22:20" itemprop="dateModified" datetime="2020-08-21T22:20:34+08:00">2020-08-21</time>
-      </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>欢迎大家访问我的博客</p>
-<p>这是我的github主页： <a target="_blank" rel="noopener" href="https://github.com/wykel">https://github.com/wykel</a> </p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-  
-  
-  
-
-
   
 
 
