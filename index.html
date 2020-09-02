@@ -128,6 +128,16 @@
     <a href="/" rel="section"><i class="home fa-fw"></i>首页</a>
 
   </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="th fa-fw"></i>分类</a>
+
+  </li>
         <li class="menu-item menu-item-archives">
 
     <a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档</a>
@@ -177,9 +187,21 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">5</span>
           <span class="site-state-item-name">日志</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
@@ -213,6 +235,90 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/02/2020-9-2-01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/author.jpg">
+      <meta itemprop="name" content="wyked">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wyked's Blog">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/09/02/2020-9-2-01/" class="post-title-link" itemprop="url">学习笔记——tabControl的吸顶效果</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2020-09-02 20:37 / 修改时间：20:41" itemprop="dateCreated datePublished" datetime="2020-09-02T20:37:44+08:00">2020-09-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%95%86%E5%9F%8E%E9%A1%B9%E7%9B%AE%E2%80%94%E2%80%94%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">商城项目——笔记</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h3 id="tabControl的吸顶效果"><a href="#tabControl的吸顶效果" class="headerlink" title="tabControl的吸顶效果"></a>tabControl的吸顶效果</h3><ul>
+<li>获取到tabControl的offsetTop<ul>
+<li>必须知道滚动到多少时，开始有吸顶效果，这个时候就需要获取tabControl的offsetTop</li>
+<li>但是，如果直接在mounted中获取tabControl的offsetTop，那么值是不正确的</li>
+<li>如何获取正确的值？
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/09/02/2020-9-2-01/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/01/2020-9-1-02/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -240,9 +346,24 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2020-09-01 21:55 / 修改时间：21:57" itemprop="dateCreated datePublished" datetime="2020-09-01T21:55:45+08:00">2020-09-01</time>
+      <time title="创建时间：2020-09-01 21:55" itemprop="dateCreated datePublished" datetime="2020-09-01T21:55:45+08:00">2020-09-01</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2020-09-02 20:40" itemprop="dateModified" datetime="2020-09-02T20:40:09+08:00">2020-09-02</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%95%86%E5%9F%8E%E9%A1%B9%E7%9B%AE%E2%80%94%E2%80%94%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">商城项目——笔记</span></a>
+        </span>
     </span>
 
   
@@ -259,37 +380,15 @@
 <li><p>Better-Scroll 在决定有多少区域可以滚动时，时根据 scrollerHeight 属性决定的</p>
 <ul>
 <li>scrollerHeight 属性是根据放 Better-Scroll 的 content 中的子组件的高度</li>
-<li>但是我们的首页中，刚开始在计算 scrollerHeight 属性时，是没有将图片计算在内的</li>
-<li>所以，计算出来的高度是错误的</li>
-<li>后来图片加载进来后有了新高度，但是 scrollerHeight 属性并没有进行更新，</li>
-<li>所以滚动出现了问题</li>
-</ul>
-</li>
-<li><p>如何解决这个问题</p>
-<ul>
-<li>监听每一张图片是否加载完成，只要有一张图片加载完成了，执行一次refersh()</li>
-<li>如何监听图片加载完成了？<ul>
-<li>原生的JS监听图片：img.onload = function(){}</li>
-<li>Vue中监听：@load=’方法’</li>
-</ul>
-</li>
-<li>调用scroll的refresh()</li>
-</ul>
-</li>
-<li><p>如何将 GoodsListItem.vue 中的事件传入到Home.vue中</p>
-<ul>
-<li><p>因为涉及到非父子组件中的通信，所以这里我们选择了<strong>事件总线</strong></p>
-<ul>
-<li>bus -&gt; 总线</li>
-<li>Vue.prototype.$bus = new Vue()</li>
-<li>this.bus.emit(‘事件名称’,参数)</li>
-<li>this.bus.on(‘事件名称’,回调函数)</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
+<li>但是我们的首页中，刚开始在计算 scrollerHeight 属性时，是没有将图片计算在内的
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/09/01/2020-9-1-02/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -337,9 +436,24 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2020-09-01 18:21 / 修改时间：18:23" itemprop="dateCreated datePublished" datetime="2020-09-01T18:21:47+08:00">2020-09-01</time>
+      <time title="创建时间：2020-09-01 18:21" itemprop="dateCreated datePublished" datetime="2020-09-01T18:21:47+08:00">2020-09-01</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2020-09-02 20:39" itemprop="dateModified" datetime="2020-09-02T20:39:09+08:00">2020-09-02</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%95%86%E5%9F%8E%E9%A1%B9%E7%9B%AE%E2%80%94%E2%80%94%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">商城项目——笔记</span></a>
+        </span>
     </span>
 
   
@@ -358,85 +472,14 @@
 </ul>
 </li>
 </ul>
-<h3 id="二、TabControl"><a href="#二、TabControl" class="headerlink" title="二、TabControl"></a>二、TabControl</h3><ul>
-<li>独立组件的封装<ul>
-<li>props -&gt; titles</li>
-<li>div &gt; 根据titles v-for遍历 div -&gt; span学习笔记——项目首页开发</li>
-<li>css相关</li>
-<li>选中哪一个tab，哪一个tab文字颜色会变色，下面border-bottom<ul>
-<li>currentIndex</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="三、首页商品数据请求"><a href="#三、首页商品数据请求" class="headerlink" title="三、首页商品数据请求"></a>三、首页商品数据请求</h3><h4 id="3-1-设计数据结构，用于保存数据"><a href="#3-1-设计数据结构，用于保存数据" class="headerlink" title="3.1 设计数据结构，用于保存数据"></a>3.1 设计数据结构，用于保存数据</h4><p>goods:{</p>
-<p>​    pop:page/list</p>
-<p>​    new:page/list</p>
-<p>​    sell:page/list</p>
-<p>}</p>
-<h4 id="3-2-发送数据请求"><a href="#3-2-发送数据请求" class="headerlink" title="3.2 发送数据请求"></a>3.2 发送数据请求</h4><ul>
-<li><p>在home.js中封装getHomeGoods(type,page)</p>
-</li>
-<li><p>在home.vue中，又在methods中getHomeGoods(type)</p>
-</li>
-<li><p>调用getHomeGoods(‘pop’) / getHomeGoods(‘new’) / getHomeGoods(‘sell’)</p>
-<ul>
-<li>page:动态的获取对应的page</li>
-</ul>
-</li>
-<li><p>获取到数据res</p>
-<ul>
-<li>this.goods[type].list.push(…res.data.data.list)</li>
-<li>this.goodes[type].page += 1</li>
-</ul>
-<p>goods:{</p>
-<p>​    pop:page1/list[30]</p>
-<p>​    new:page1/list[30]</p>
-<p>​    sell:page1/list[30]</p>
-<p>}</p>
-</li>
-</ul>
-<h3 id="四、对商品数据进行展示"><a href="#四、对商品数据进行展示" class="headerlink" title="四、对商品数据进行展示"></a>四、对商品数据进行展示</h3><h4 id="4-1-封装GoodsList组件"><a href="#4-1-封装GoodsList组件" class="headerlink" title="4.1 封装GoodsList组件"></a>4.1 封装GoodsList组件</h4><ul>
-<li>props:goods -&gt; list[30]</li>
-<li>v-for goods -&gt; GoodsListItem[30]</li>
-<li>GoodsListItem(组件) -&gt; GoodsItem(数据)</li>
-</ul>
-<h4 id="4-2-封装GoodsListItem-vue组件"><a href="#4-2-封装GoodsListItem-vue组件" class="headerlink" title="4.2 封装GoodsListItem.vue组件"></a>4.2 封装GoodsListItem.vue组件</h4><ul>
-<li>props:goodsItem</li>
-<li>goodsItem 取出数据，并且使用正确的div/span/img基本标签进行展示</li>
-</ul>
-<h3 id="五、对滚动进行重构：Better-Scroll"><a href="#五、对滚动进行重构：Better-Scroll" class="headerlink" title="五、对滚动进行重构：Better-Scroll"></a>五、对滚动进行重构：Better-Scroll</h3><ul>
-<li>在Profile.vue中简单的演示</li>
-<li>对Better-Scroll进行封装：Scroll.vue</li>
-<li>Home.vue和Scroll.vue之间进行通信<ul>
-<li>Home.vue将ProbeType设置为3</li>
-<li>scroll.vue需要通过$emit,实时的将事件发送到Home.vue</li>
-</ul>
-</li>
-</ul>
-<h3 id="六、回到顶部Back-Top"><a href="#六、回到顶部Back-Top" class="headerlink" title="六、回到顶部Back-Top"></a>六、回到顶部Back-Top</h3><h4 id="6-1-对BackTop-vue组件的封装"><a href="#6-1-对BackTop-vue组件的封装" class="headerlink" title="6.1 对BackTop.vue组件的封装"></a>6.1 对BackTop.vue组件的封装</h4><h4 id="6-2-如何监听组件的点击"><a href="#6-2-如何监听组件的点击" class="headerlink" title="6.2 如何监听组件的点击"></a>6.2 如何监听组件的点击</h4><ul>
-<li><p>直接监听back-top的点击，但是可以直接监听组件吗？</p>
-<ul>
-<li>不可以，必须添加修饰 .native</li>
-</ul>
-</li>
-<li><p>回到顶部</p>
-<ul>
-<li>scroll对象，scroll。scrollTo(x,y,time)</li>
-<li>this.$refs.scroll.scrollTo(0,0,500)</li>
-</ul>
-</li>
-</ul>
-<h3 id="6-3-BackTop组件的显示和隐藏"><a href="#6-3-BackTop组件的显示和隐藏" class="headerlink" title="6.3 BackTop组件的显示和隐藏"></a>6.3 BackTop组件的显示和隐藏</h3><ul>
-<li>isShowBackTop：false</li>
-<li>监听滚动，拿到滚动的位置<ul>
-<li>-position.y &gt;1000 -&gt; isShowBackTop: true</li>
-<li>isShowBackTop = -position.y &gt;1000</li>
-</ul>
-</li>
-</ul>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/09/01/2020-9-1-01/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -484,9 +527,24 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2020-08-31 21:25 / 修改时间：22:48" itemprop="dateCreated datePublished" datetime="2020-08-31T21:25:35+08:00">2020-08-31</time>
+      <time title="创建时间：2020-08-31 21:25" itemprop="dateCreated datePublished" datetime="2020-08-31T21:25:35+08:00">2020-08-31</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2020-09-02 20:40" itemprop="dateModified" datetime="2020-09-02T20:40:05+08:00">2020-09-02</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%9B%BE%E4%B9%A6%E9%89%B4%E8%B5%8F%E2%80%94%E2%80%94%E3%80%8A%E5%9B%BE%E8%A7%A3HTTP%E3%80%8B/" itemprop="url" rel="index"><span itemprop="name">图书鉴赏——《图解HTTP》</span></a>
+        </span>
     </span>
 
   
@@ -501,9 +559,14 @@
     <div class="post-body" itemprop="articleBody">
           <h4 id="一、了解Web及网络基础"><a href="#一、了解Web及网络基础" class="headerlink" title="一、了解Web及网络基础"></a>一、了解Web及网络基础</h4><p>Web 页面不会凭空显示出来。根据Web浏览器地址栏中指定的 URL，Web 浏览器从Web服务器端获取文件资源（resource）等信息，从而显示 Web 页面。</p>
 <p>Web 使用一种名为 HTTP（HyperText Transfer Protocol，超文本传输协议）的协议作为规范。</p>
-<p>HTTP 通常被译为超文本传输协议，但这种译法并不严谨。严谨的译名应该 为“超文本转移协议”。 </p>
-<p>名词：HTTP：HyperText Transfer Protocol （超文本传输协议）</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/08/31/2020-8-31-1/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -541,7 +604,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/08/17/First/" class="post-title-link" itemprop="url">刚刚开始的blog</a>
+            <a href="/2020/08/17/First/" class="post-title-link" itemprop="url">欢迎大家访问我的博客</a>
         </h2>
 
         <div class="post-meta-container">
@@ -559,7 +622,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2020-08-21 22:20" itemprop="dateModified" datetime="2020-08-21T22:20:34+08:00">2020-08-21</time>
+        <time title="修改时间：2020-09-02 20:37" itemprop="dateModified" datetime="2020-09-02T20:37:03+08:00">2020-09-02</time>
       </span>
 
   
@@ -572,8 +635,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>欢迎大家访问我的博客</p>
-<p>这是我的github主页： <a target="_blank" rel="noopener" href="https://github.com/wykel">https://github.com/wykel</a> </p>
+          <p>这是我的github主页： <a target="_blank" rel="noopener" href="https://github.com/wykel">https://github.com/wykel</a> </p>
 
       
     </div>
