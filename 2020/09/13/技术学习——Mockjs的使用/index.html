@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.0.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"8.0.0-rc.5","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
+  </script>
+
+  <meta name="description" content="Mcokjs mockjs生成随机数据语法  mockjs拦截请求   什么是mockjs官方文档 生成随机数据，拦截Ajax请求">
+<meta property="og:type" content="article">
+<meta property="og:title" content="技术学习——Mockjs的使用">
+<meta property="og:url" content="http://yoursite.com/2020/09/13/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E2%80%94%E2%80%94Mockjs%E7%9A%84%E4%BD%BF%E7%94%A8/index.html">
+<meta property="og:site_name" content="wyked&#39;s Blog">
+<meta property="og:description" content="Mcokjs mockjs生成随机数据语法  mockjs拦截请求   什么是mockjs官方文档 生成随机数据，拦截Ajax请求">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-09-13T08:35:02.000Z">
+<meta property="article:modified_time" content="2020-09-13T09:19:46.151Z">
+<meta property="article:author" content="wyked">
+<meta property="article:tag" content="Mockjs">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://yoursite.com/2020/09/13/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E2%80%94%E2%80%94Mockjs%E7%9A%84%E4%BD%BF%E7%94%A8/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>技术学习——Mockjs的使用 | wyked's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">wyked's Blog</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">xdd</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Mcokjs"><span class="nav-number">1.</span> <span class="nav-text">Mcokjs</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFmockjs"><span class="nav-number">1.1.</span> <span class="nav-text">什么是mockjs</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8mockjs"><span class="nav-number">1.2.</span> <span class="nav-text">为什么使用mockjs</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8mockjs"><span class="nav-number">1.3.</span> <span class="nav-text">使用mockjs</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95"><span class="nav-number">1.4.</span> <span class="nav-text">其他基础语法</span></a></li></ol></li></ol></div>
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="wyked"
+      src="/images/author.jpg">
+  <p class="site-author-name" itemprop="name">wyked</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </section>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+      
+
+      
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/13/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E2%80%94%E2%80%94Mockjs%E7%9A%84%E4%BD%BF%E7%94%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/author.jpg">
+      <meta itemprop="name" content="wyked">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wyked's Blog">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          技术学习——Mockjs的使用
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2020-09-13 16:35 / 修改时间：17:19" itemprop="dateCreated datePublished" datetime="2020-09-13T16:35:02+08:00">2020-09-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">技术学习</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h3 id="Mcokjs"><a href="#Mcokjs" class="headerlink" title="Mcokjs"></a>Mcokjs</h3><ul>
+<li><p>mockjs生成随机数据语法</p>
+</li>
+<li><p>mockjs拦截请求</p>
+</li>
+</ul>
+<h4 id="什么是mockjs"><a href="#什么是mockjs" class="headerlink" title="什么是mockjs"></a>什么是mockjs</h4><p><a target="_blank" rel="noopener" href="http://mockjs.com/">官方文档</a></p>
+<p>生成随机数据，拦截Ajax请求</p>
+<a id="more"></a>
+
+<h4 id="为什么使用mockjs"><a href="#为什么使用mockjs" class="headerlink" title="为什么使用mockjs"></a>为什么使用mockjs</h4><p>在工作中开发中，如果后端接口还未开发完成，难道我们就只能写静态页面了吗？所以前端为了不影响工作效率，我们自己手动模拟后端接口返回随机数据。</p>
+<p>1.采用json数据模拟，生成数据比较繁琐，也比较有局限性，没办法达到增删查改</p>
+<p>2.采用mockjs进行模拟数据，可以模拟各种场景（get、post）生成接口，并且随机生成所需数据，还可以对数据进行增删查改</p>
+<h4 id="使用mockjs"><a href="#使用mockjs" class="headerlink" title="使用mockjs"></a>使用mockjs</h4><p>通过vue-cli创建基本项目</p>
+<ul>
+<li>在项目中安装mock</li>
+</ul>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">install</span> mockjs</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>在项目中新建mock文件夹，新建index.js文件，引入Mock</li>
+</ul>
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Mock <span class="keyword">from</span> <span class="string">&#x27;mockjs&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>定义数据类型</li>
+</ul>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">var &#123; dataList &#125;  = Mock.mock(&#123;</span><br><span class="line">  <span class="regexp">//</span> |<span class="number">50</span> --&gt; 生成<span class="number">50</span>条数据</span><br><span class="line">  <span class="string">&quot;dataList|50&quot;</span>:[</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="regexp">//</span> 生成增量id</span><br><span class="line">      <span class="string">&quot;id&quot;</span>: <span class="string">&#x27;@increment(1)&#x27;</span>,</span><br><span class="line">      <span class="regexp">//</span> 生成标题</span><br><span class="line">      <span class="string">&quot;title&quot;</span>: <span class="string">&quot;@ctitle()&quot;</span>,</span><br><span class="line">      <span class="regexp">//</span> 生成段落</span><br><span class="line">      <span class="string">&quot;content&quot;</span>: <span class="string">&quot;@cparagraph(5,15)&quot;</span>,</span><br><span class="line">      <span class="regexp">//</span> 生成图片</span><br><span class="line">      <span class="string">&quot;img_url&quot;</span>: <span class="string">&quot;@img(&#x27;100*100&#x27;,&#x27;#FF83FA&#x27;,&#x27;#FCFCFC&#x27;,&#x27;png&#x27;,&#x27;wyked&#x27;)&quot;</span>,</span><br><span class="line">      <span class="regexp">//</span> 生成时间</span><br><span class="line">      <span class="string">&quot;add_time&quot;</span>: <span class="string">&quot;@date(yyyy-MM-dd hh:mm:ss)&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>定义拦截get请求</li>
+</ul>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">Mock</span><span class="selector-class">.mock</span>(<span class="string">&#x27;/api/get/data&#x27;</span>, <span class="string">&#x27;get&#x27;</span>, &#123;</span><br><span class="line">  <span class="attribute">status</span>: <span class="number">200</span>,</span><br><span class="line">  <span class="attribute">msg</span>: <span class="string">&#x27;获取get数据成功！&#x27;</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>定义拦截post请求</li>
+</ul>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义拦截post请求</span></span><br><span class="line"><span class="selector-tag">Mock</span><span class="selector-class">.mock</span>(<span class="string">&#x27;/api/post/data&#x27;</span>, <span class="string">&#x27;post&#x27;</span>, &#123;</span><br><span class="line">  <span class="attribute">status</span>: <span class="number">200</span>,</span><br><span class="line">  <span class="attribute">msg</span>: <span class="string">&#x27;获取post数据成功！&#x27;</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>定义获取数据列表的数据</li>
+</ul>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">Mock</span><span class="selector-class">.mock</span>(<span class="string">&#x27;/api/get/data&#x27;</span>, <span class="string">&#x27;get&#x27;</span>, () =&gt; &#123;</span><br><span class="line">  <span class="selector-tag">return</span> &#123;</span><br><span class="line">    <span class="attribute">status</span>: <span class="number">200</span>,</span><br><span class="line">    <span class="attribute">message</span>: <span class="string">&#x27;获取数据列表成功！&#x27;</span>,</span><br><span class="line">    <span class="attribute">list</span>: dataList,</span><br><span class="line">    <span class="attribute">total</span>: dataList.length</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>获取前端传递的数据</li>
+</ul>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">axios.<span class="built_in">get</span>(<span class="string">&#x27;/api/get/data&#x27;</span>).then(<span class="keyword">res</span> =&gt;&#123;</span><br><span class="line">      console.<span class="built_in">log</span>(<span class="keyword">res</span>)</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="其他基础语法"><a href="#其他基础语法" class="headerlink" title="其他基础语法"></a>其他基础语法</h4><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 以c开头，生成中文</span></span><br><span class="line"><span class="comment">// 生成文本</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">data</span> = Mock.mock(&#123;</span><br><span class="line">  <span class="string">&#x27;string|1-4&#x27;</span>: <span class="string">&#x27;你好！&#x27;</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">data</span> = Mock.mock(&#123;</span><br><span class="line">  string: <span class="string">&#x27;@cword(3,10)&#x27;</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 生成标题和句子</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">data</span> = Mock.mock(&#123;</span><br><span class="line">  title: <span class="string">&#x27;@ctitle(3,10)&#x27;</span>,</span><br><span class="line">  sentence: <span class="string">&#x27;@csentence(50,100)&#x27;</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 生成段落</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">data</span> = Mock.mock(&#123;</span><br><span class="line">  content: <span class="string">&#x27;@cparagraph()&#x27;</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 生成数值</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">data</span> = Mock.mock(&#123;</span><br><span class="line">  name: <span class="string">&#x27;@cname()&#x27;</span>,</span><br><span class="line">  idCard: <span class="string">&#x27;@id()&#x27;</span>,</span><br><span class="line">  address: <span class="string">&#x27;@city(true)&#x27;</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 生成增量id</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">data</span> = Mock.mock(&#123;</span><br><span class="line">  id: <span class="string">&#x27;@increment(1)&#x27;</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 生成图片</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">data</span> = Mock.mock(&#123;</span><br><span class="line">  img_url: <span class="string">&quot; @image(&#x27;250x250&#x27;,&#x27;#FFFFFF&#x27;,&#x27;#333&#x27;,&#x27;png&#x27;,&#x27;hello&#x27;)&quot;</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 生成日期</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">data</span> = Mock.mock(&#123;</span><br><span class="line">  date: <span class="string">&#x27;@date(yyyy-MM-dd hh:mm:ss)&#x27;</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 生成数组</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">data</span> = Mock.mock(&#123;</span><br><span class="line">  <span class="string">&#x27;list|10-50&#x27;</span>: [</span><br><span class="line">    &#123;</span><br><span class="line">      name: <span class="string">&#x27;@cname()&#x27;</span>,</span><br><span class="line">      adress: <span class="string">&#x27;@city(true)&#x27;</span>,</span><br><span class="line">      id: <span class="string">&#x27;@increment(1)&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>你的支持将鼓励我继续创作！</div>
+  <button onclick="document.querySelector('.post-reward').classList.toggle('active');">
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.png" alt="wyked 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="/images/alipay.png" alt="wyked 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Mockjs/" rel="tag"># Mockjs</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2020/09/02/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E6%91%98%E8%87%AA%E3%80%8A%E5%9B%BE%E8%A7%A3HTTP%E3%80%8B/" rel="prev" title="学习笔记——摘自《图解HTTP》">
+                  <i class="fa fa-chevron-left"></i> 学习笔记——摘自《图解HTTP》
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+  
+  
+  
+
+
+
+      
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      
+
+      
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">wyked</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.0/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
