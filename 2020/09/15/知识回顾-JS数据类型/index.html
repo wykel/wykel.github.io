@@ -22,21 +22,21 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"8.0.0-rc.5","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
   </script>
 
-  <meta name="description" content="一、FeatureView 独立组件封装 FeatureView div &gt; a &gt; img">
+  <meta name="description" content="JavaScript 数据类型数据类型指的就是字面量的类型，在JS中一共有6种数据类型。 分别是：  String — 字符串 Number — 数值 Boolean — 布尔值 Null — 空值 Undefined — 未定义 Object — 对象  其中 String Number Boolean Null Undefined 属于基本数据类型 而Object属于引用数据类型">
 <meta property="og:type" content="article">
-<meta property="og:title" content="学习笔记——项目首页开发">
-<meta property="og:url" content="http://yoursite.com/2020/09/01/2020-9-1-01/index.html">
+<meta property="og:title" content="知识回顾-JS数据类型">
+<meta property="og:url" content="http://yoursite.com/2020/09/15/%E7%9F%A5%E8%AF%86%E5%9B%9E%E9%A1%BE-JS%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/index.html">
 <meta property="og:site_name" content="wyked&#39;s Blog">
-<meta property="og:description" content="一、FeatureView 独立组件封装 FeatureView div &gt; a &gt; img">
+<meta property="og:description" content="JavaScript 数据类型数据类型指的就是字面量的类型，在JS中一共有6种数据类型。 分别是：  String — 字符串 Number — 数值 Boolean — 布尔值 Null — 空值 Undefined — 未定义 Object — 对象  其中 String Number Boolean Null Undefined 属于基本数据类型 而Object属于引用数据类型">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-09-01T10:21:47.541Z">
-<meta property="article:modified_time" content="2020-09-02T12:39:09.970Z">
+<meta property="article:published_time" content="2020-09-15T12:43:23.000Z">
+<meta property="article:modified_time" content="2020-11-04T13:39:50.433Z">
 <meta property="article:author" content="wyked">
-<meta property="article:tag" content="项目">
+<meta property="article:tag" content="JavaScript">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://yoursite.com/2020/09/01/2020-9-1-01/">
+<link rel="canonical" href="http://yoursite.com/2020/09/15/%E7%9F%A5%E8%AF%86%E5%9B%9E%E9%A1%BE-JS%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">
 
 
 <script class="page-configurations">
@@ -49,7 +49,7 @@
   };
 </script>
 
-  <title>学习笔记——项目首页开发 | wyked's Blog</title>
+  <title>知识回顾-JS数据类型 | wyked's Blog</title>
   
 
 
@@ -177,7 +177,7 @@
 
       <!--noindex-->
       <section class="post-toc-wrap sidebar-panel">
-          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E3%80%81FeatureView"><span class="nav-number">1.</span> <span class="nav-text">一、FeatureView</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E3%80%81TabControl"><span class="nav-number">2.</span> <span class="nav-text">二、TabControl</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E9%A6%96%E9%A1%B5%E5%95%86%E5%93%81%E6%95%B0%E6%8D%AE%E8%AF%B7%E6%B1%82"><span class="nav-number">3.</span> <span class="nav-text">三、首页商品数据请求</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-%E8%AE%BE%E8%AE%A1%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%8C%E7%94%A8%E4%BA%8E%E4%BF%9D%E5%AD%98%E6%95%B0%E6%8D%AE"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 设计数据结构，用于保存数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-%E5%8F%91%E9%80%81%E6%95%B0%E6%8D%AE%E8%AF%B7%E6%B1%82"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 发送数据请求</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E5%AF%B9%E5%95%86%E5%93%81%E6%95%B0%E6%8D%AE%E8%BF%9B%E8%A1%8C%E5%B1%95%E7%A4%BA"><span class="nav-number">4.</span> <span class="nav-text">四、对商品数据进行展示</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-%E5%B0%81%E8%A3%85GoodsList%E7%BB%84%E4%BB%B6"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 封装GoodsList组件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-%E5%B0%81%E8%A3%85GoodsListItem-vue%E7%BB%84%E4%BB%B6"><span class="nav-number">4.2.</span> <span class="nav-text">4.2 封装GoodsListItem.vue组件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%94%E3%80%81%E5%AF%B9%E6%BB%9A%E5%8A%A8%E8%BF%9B%E8%A1%8C%E9%87%8D%E6%9E%84%EF%BC%9ABetter-Scroll"><span class="nav-number">5.</span> <span class="nav-text">五、对滚动进行重构：Better-Scroll</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%AD%E3%80%81%E5%9B%9E%E5%88%B0%E9%A1%B6%E9%83%A8Back-Top"><span class="nav-number">6.</span> <span class="nav-text">六、回到顶部Back-Top</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#6-1-%E5%AF%B9BackTop-vue%E7%BB%84%E4%BB%B6%E7%9A%84%E5%B0%81%E8%A3%85"><span class="nav-number">6.1.</span> <span class="nav-text">6.1 对BackTop.vue组件的封装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-2-%E5%A6%82%E4%BD%95%E7%9B%91%E5%90%AC%E7%BB%84%E4%BB%B6%E7%9A%84%E7%82%B9%E5%87%BB"><span class="nav-number">6.2.</span> <span class="nav-text">6.2 如何监听组件的点击</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-3-BackTop%E7%BB%84%E4%BB%B6%E7%9A%84%E6%98%BE%E7%A4%BA%E5%92%8C%E9%9A%90%E8%97%8F"><span class="nav-number">7.</span> <span class="nav-text">6.3 BackTop组件的显示和隐藏</span></a></li></ol></div>
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.</span> <span class="nav-text">JavaScript 数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%80%E3%80%81String%E2%80%94%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">1.1.</span> <span class="nav-text">一、String—字符串</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%8C%E3%80%81Number%E2%80%94%E6%95%B0%E5%80%BC"><span class="nav-number">1.2.</span> <span class="nav-text">二、Number—数值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%89%E3%80%81Boolean%E2%80%94%E5%B8%83%E5%B0%94%E5%80%BC"><span class="nav-number">1.3.</span> <span class="nav-text">三、Boolean—布尔值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9B%9B%E3%80%81Null-%E5%92%8C-Undefined"><span class="nav-number">1.4.</span> <span class="nav-text">四、Null 和 Undefined</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1%E3%80%81Null"><span class="nav-number">1.4.1.</span> <span class="nav-text">1、Null</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2%E3%80%81Undefined"><span class="nav-number">1.4.2.</span> <span class="nav-text">2、Undefined</span></a></li></ol></li></ol></li></ol></div>
       </section>
       <!--/noindex-->
 
@@ -242,7 +242,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/01/2020-9-1-01/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/15/%E7%9F%A5%E8%AF%86%E5%9B%9E%E9%A1%BE-JS%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/author.jpg">
@@ -258,7 +258,7 @@
     
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          学习笔记——项目首页开发
+          知识回顾-JS数据类型
         </h1>
 
         <div class="post-meta-container">
@@ -269,14 +269,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2020-09-01 18:21" itemprop="dateCreated datePublished" datetime="2020-09-01T18:21:47+08:00">2020-09-01</time>
+      <time title="创建时间：2020-09-15 20:43" itemprop="dateCreated datePublished" datetime="2020-09-15T20:43:23+08:00">2020-09-15</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2020-09-02 20:39" itemprop="dateModified" datetime="2020-09-02T20:39:09+08:00">2020-09-02</time>
+        <time title="修改时间：2020-11-04 21:39" itemprop="dateModified" datetime="2020-11-04T21:39:50+08:00">2020-11-04</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -284,7 +284,7 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%95%86%E5%9F%8E%E9%A1%B9%E7%9B%AE%E2%80%94%E2%80%94%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">商城项目——笔记</span></a>
+          <a href="/categories/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">技术学习</span></a>
         </span>
     </span>
 
@@ -298,92 +298,68 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h3 id="一、FeatureView"><a href="#一、FeatureView" class="headerlink" title="一、FeatureView"></a>一、FeatureView</h3><ul>
-<li>独立组件封装 FeatureView<ul>
-<li>div &gt; a &gt; img</li>
+        <h3 id="JavaScript-数据类型"><a href="#JavaScript-数据类型" class="headerlink" title="JavaScript 数据类型"></a>JavaScript 数据类型</h3><p>数据类型指的就是字面量的类型，在JS中一共有6种数据类型。</p>
+<p>分别是：</p>
+<ul>
+<li>String — 字符串</li>
+<li>Number — 数值</li>
+<li>Boolean — 布尔值</li>
+<li>Null — 空值</li>
+<li>Undefined — 未定义</li>
+<li>Object — 对象</li>
 </ul>
-</li>
-</ul>
+<p>其中 String Number Boolean Null Undefined 属于基本数据类型</p>
+<p>而Object属于引用数据类型</p>
 <a id="more"></a>
 
-<h3 id="二、TabControl"><a href="#二、TabControl" class="headerlink" title="二、TabControl"></a>二、TabControl</h3><ul>
-<li>独立组件的封装<ul>
-<li>props -&gt; titles</li>
-<li>div &gt; 根据titles v-for遍历 div -&gt; span学习笔记——项目首页开发</li>
-<li>css相关</li>
-<li>选中哪一个tab，哪一个tab文字颜色会变色，下面border-bottom<ul>
-<li>currentIndex</li>
+<h4 id="一、String—字符串"><a href="#一、String—字符串" class="headerlink" title="一、String—字符串"></a>一、String—字符串</h4><ul>
+<li>在JS中字符串需要使用引号引起来</li>
+<li>使用双引号或者单引号都可以，但是不要混合着用</li>
+<li>引号不能嵌套，双引号不能放双引号，单引号不能放单引号</li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="三、首页商品数据请求"><a href="#三、首页商品数据请求" class="headerlink" title="三、首页商品数据请求"></a>三、首页商品数据请求</h3><h4 id="3-1-设计数据结构，用于保存数据"><a href="#3-1-设计数据结构，用于保存数据" class="headerlink" title="3.1 设计数据结构，用于保存数据"></a>3.1 设计数据结构，用于保存数据</h4><p>goods:{</p>
-<p>​    pop:page/list</p>
-<p>​    new:page/list</p>
-<p>​    sell:page/list</p>
-<p>}</p>
-<h4 id="3-2-发送数据请求"><a href="#3-2-发送数据请求" class="headerlink" title="3.2 发送数据请求"></a>3.2 发送数据请求</h4><ul>
-<li><p>在home.js中封装getHomeGoods(type,page)</p>
-</li>
-<li><p>在home.vue中，又在methods中getHomeGoods(type)</p>
-</li>
-<li><p>调用getHomeGoods(‘pop’) / getHomeGoods(‘new’) / getHomeGoods(‘sell’)</p>
-<ul>
-<li>page:动态的获取对应的page</li>
-</ul>
-</li>
-<li><p>获取到数据res</p>
-<ul>
-<li>this.goods[type].list.push(…res.data.data.list)</li>
-<li>this.goodes[type].page += 1</li>
-</ul>
-<p>goods:{</p>
-<p>​    pop:page1/list[30]</p>
-<p>​    new:page1/list[30]</p>
-<p>​    sell:page1/list[30]</p>
-<p>}</p>
-</li>
-</ul>
-<h3 id="四、对商品数据进行展示"><a href="#四、对商品数据进行展示" class="headerlink" title="四、对商品数据进行展示"></a>四、对商品数据进行展示</h3><h4 id="4-1-封装GoodsList组件"><a href="#4-1-封装GoodsList组件" class="headerlink" title="4.1 封装GoodsList组件"></a>4.1 封装GoodsList组件</h4><ul>
-<li>props:goods -&gt; list[30]</li>
-<li>v-for goods -&gt; GoodsListItem[30]</li>
-<li>GoodsListItem(组件) -&gt; GoodsItem(数据)</li>
-</ul>
-<h4 id="4-2-封装GoodsListItem-vue组件"><a href="#4-2-封装GoodsListItem-vue组件" class="headerlink" title="4.2 封装GoodsListItem.vue组件"></a>4.2 封装GoodsListItem.vue组件</h4><ul>
-<li>props:goodsItem</li>
-<li>goodsItem 取出数据，并且使用正确的div/span/img基本标签进行展示</li>
-</ul>
-<h3 id="五、对滚动进行重构：Better-Scroll"><a href="#五、对滚动进行重构：Better-Scroll" class="headerlink" title="五、对滚动进行重构：Better-Scroll"></a>五、对滚动进行重构：Better-Scroll</h3><ul>
-<li>在Profile.vue中简单的演示</li>
-<li>对Better-Scroll进行封装：Scroll.vue</li>
-<li>Home.vue和Scroll.vue之间进行通信<ul>
-<li>Home.vue将ProbeType设置为3</li>
-<li>scroll.vue需要通过$emit,实时的将事件发送到Home.vue</li>
-</ul>
-</li>
-</ul>
-<h3 id="六、回到顶部Back-Top"><a href="#六、回到顶部Back-Top" class="headerlink" title="六、回到顶部Back-Top"></a>六、回到顶部Back-Top</h3><h4 id="6-1-对BackTop-vue组件的封装"><a href="#6-1-对BackTop-vue组件的封装" class="headerlink" title="6.1 对BackTop.vue组件的封装"></a>6.1 对BackTop.vue组件的封装</h4><h4 id="6-2-如何监听组件的点击"><a href="#6-2-如何监听组件的点击" class="headerlink" title="6.2 如何监听组件的点击"></a>6.2 如何监听组件的点击</h4><ul>
-<li><p>直接监听back-top的点击，但是可以直接监听组件吗？</p>
-<ul>
-<li>不可以，必须添加修饰 .native</li>
-</ul>
-</li>
-<li><p>回到顶部</p>
-<ul>
-<li>scroll对象，scroll。scrollTo(x,y,time)</li>
-<li>this.$refs.scroll.scrollTo(0,0,500)</li>
-</ul>
-</li>
-</ul>
-<h3 id="6-3-BackTop组件的显示和隐藏"><a href="#6-3-BackTop组件的显示和隐藏" class="headerlink" title="6.3 BackTop组件的显示和隐藏"></a>6.3 BackTop组件的显示和隐藏</h3><ul>
-<li>isShowBackTop：false</li>
-<li>监听滚动，拿到滚动的位置<ul>
-<li>-position.y &gt;1000 -&gt; isShowBackTop: true</li>
-<li>isShowBackTop = -position.y &gt;1000</li>
-</ul>
-</li>
-</ul>
+<p>在字符串中我们可以使用 \ 作为转义字符，当表示一些特殊符号时可以使用 \ 进行转义</p>
+<p>例如：</p>
+<figure class="highlight cal"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">&quot;\&quot;</span>hello\<span class="string">&quot;&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>可以使用一个运算符 typeof 来检查一个变量的类型<br>语法：typeof 变量<br>检查字符串时，会返回 string</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">&quot;Hello&quot;</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> a); <span class="comment">// string</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="二、Number—数值"><a href="#二、Number—数值" class="headerlink" title="二、Number—数值"></a>二、Number—数值</h4><p>在JS中所有的数值都是Unmber类型，包括整数和浮点数(小数)</p>
+<p>JS中可以表示的数字的最大值</p>
+<p>Number.MAX_VALUE （1.7976931348623157e+308）</p>
+<p>Number.MIN_VALUE 大于0的最小值 （5e-324）</p>
+<p>如果使用Number表示的数字超过了最大值，则会返回一个Infinity</p>
+<p>Infinity 表示正无穷</p>
+<p>-Infinity 表示负无穷</p>
+<p>使用typeof检查Infinity也会返回number</p>
+<p>NaN 是一个特殊的数字，表示 Not A Number</p>
+<p>使用typeof检查一个NaN也会返回number</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> b = <span class="number">1234</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> b); <span class="comment">// number</span></span><br></pre></td></tr></table></figure>
+
+<p>注意：</p>
+<p>在JS中整数的运算基本上可以保证精确，但如果要使用JS进行浮点运算，可能得到一个不精确的结果，所以千万不要使用JS进行对精确度要求比较高的运算。</p>
+<h4 id="三、Boolean—布尔值"><a href="#三、Boolean—布尔值" class="headerlink" title="三、Boolean—布尔值"></a>三、Boolean—布尔值</h4><p>布尔值只有两个，主要用来做逻辑判断</p>
+<p>true — 表示真</p>
+<p>false — 表示假</p>
+<p>使用typeof检查一个布尔值时，会返回boolean</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> c = <span class="literal">true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> c); <span class="comment">// boolean</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="四、Null-和-Undefined"><a href="#四、Null-和-Undefined" class="headerlink" title="四、Null 和 Undefined"></a>四、Null 和 Undefined</h4><h5 id="1、Null"><a href="#1、Null" class="headerlink" title="1、Null"></a>1、Null</h5><p>Null 类型的值只有一个，就是Null，null这个值专门用来表示一个为空的对象。</p>
+<p>使用typeof检查一个null值时，会返回object</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> d = <span class="literal">null</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> d); <span class="comment">// object</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="2、Undefined"><a href="#2、Undefined" class="headerlink" title="2、Undefined"></a>2、Undefined</h5><p>Undefined （未定义）类型的值只有一个，就是undefined，当声明一个变量，但是并不给变量赋值时，它的值就是undefined。</p>
+<p>使用typeof检查一个undefined值时，也会返回undefined</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> d</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> d); <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+
 
     </div>
 
@@ -411,21 +387,18 @@
 </div>
 
           <div class="post-tags">
-              <a href="/tags/%E9%A1%B9%E7%9B%AE/" rel="tag"># 项目</a>
+              <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2020/08/17/First/" rel="prev" title="欢迎大家访问我的博客">
-                  <i class="fa fa-chevron-left"></i> 欢迎大家访问我的博客
+                <a href="/2020/09/13/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0%E2%80%94%E2%80%94Mockjs%E7%9A%84%E4%BD%BF%E7%94%A8/" rel="prev" title="技术学习——Mockjs的使用">
+                  <i class="fa fa-chevron-left"></i> 技术学习——Mockjs的使用
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2020/09/01/2020-9-1-02/" rel="next" title="学习笔记——解决滚动问题">
-                  学习笔记——解决滚动问题 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
